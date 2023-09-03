@@ -1,0 +1,18 @@
+package main
+
+import (
+	"fmt"
+
+	"github.com/rclone/rclone/fs"
+	"github.com/rclone/rclone/fs/config/configmap"
+)
+
+func init() {
+	fs.Register(&fs.RegInfo{
+		Name:        "minimal",
+		Description: "I am just a dummy",
+		NewFs: func(name string, root string, config configmap.Mapper) (i fs.Fs, e error) {
+			return nil, fmt.Errorf("TODO")
+		},
+	})
+}
